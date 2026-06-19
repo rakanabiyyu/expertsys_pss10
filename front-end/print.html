@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringkasan Klinis - MindCalm PSS-10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#315273',
+                        secondary: '#f3f4f6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        
+        @media print {
+            body { background-color: #ffffff; }
+            .no-print { display: none !important; }
+            .print-card { box-shadow: none !important; border: 1px solid #e2e8f0; }
+            .print-bg { background-color: transparent !important; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 pb-12">
+
+    <!-- Header / Navbar (No Print) -->
+    <header class="bg-white border-b border-gray-200 no-print sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary"><a href="result.html">MindCalm PSS-10</a></div>
+            <button onclick="window.print()" class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-opacity-90 transition-colors">
+                Cetak PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- Document Wrapper -->
+    <main class="max-w-4xl mx-auto mt-8 bg-white print-card shadow-lg rounded-xl overflow-hidden print:shadow-none print:mt-0 print:border-none">
+        <div class="p-10 sm:p-14">
+            
+            <h1 class="text-2xl font-bold text-slate-900 mb-8 pb-4 border-b border-gray-200">
+                MindCalm PSS-10: Ringkasan Klinis
+            </h1>
+
+            <!-- Identitas -->
+            <div class="grid grid-cols-2 gap-8 mb-10">
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Nama Mahasiswa</p>
+                    <p class="text-lg font-medium text-slate-900 border-b border-gray-200 pb-2" id="print-name">...</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Jenis Kelamin</p>
+                    <p class="text-lg font-medium text-slate-900 border-b border-gray-200 pb-2" id="print-gender">...</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Umur</p>
+                    <p class="text-lg font-medium text-slate-900 border-b border-gray-200 pb-2" id="print-age">...</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Tanggal Tes</p>
+                    <p class="text-lg font-medium text-slate-900 border-b border-gray-200 pb-2" id="print-date">...</p>
+                </div>
+            </div>
+
+            <!-- Skor & Kategori -->
+            <div class="grid grid-cols-2 gap-6 mb-10">
+                <div class="bg-slate-50 print-bg print-card rounded-xl border border-gray-200 p-6">
+                    <p class="text-sm font-semibold text-gray-600 mb-2">Skor Total PSS-10</p>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-bold text-primary" id="print-score">...</span>
+                        <span class="text-lg text-gray-500 ml-2">/ 40</span>
+                    </div>
+                </div>
+                <div class="bg-green-50 print-bg print-card rounded-xl border border-green-100 p-6" id="print-category-box">
+                    <p class="text-sm font-semibold text-gray-600 mb-2">Kategori Tingkat Stres</p>
+                    <div class="flex items-center text-green-700" id="print-category-text-wrap">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <span class="text-xl font-bold" id="print-category">...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interpretasi -->
+            <div class="mb-10">
+                <div class="flex items-center mb-4">
+                    <div class="w-1 h-6 bg-primary rounded-full mr-3"></div>
+                    <h2 class="text-lg font-bold text-slate-800">Interpretasi Hasil</h2>
+                </div>
+                <div class="bg-slate-50 print-bg print-card rounded-xl border border-gray-200 p-6">
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4" id="print-interp-1">
+                        ...
+                    </p>
+                    <p class="text-gray-700 text-sm leading-relaxed" id="print-interp-2">
+                        ...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabel Rincian -->
+            <div class="mb-10">
+                <div class="flex items-center mb-4">
+                    <div class="w-1 h-6 bg-primary rounded-full mr-3"></div>
+                    <h2 class="text-lg font-bold text-slate-800">Rincian Respon Instrumen</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left border-collapse border border-gray-200 rounded-lg">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 print-bg">
+                            <tr>
+                                <th scope="col" class="px-4 py-3 border border-gray-200 w-12 text-center">#</th>
+                                <th scope="col" class="px-4 py-3 border border-gray-200">Pertanyaan PSS-10</th>
+                                <th scope="col" class="px-4 py-3 border border-gray-200 w-24 text-center">Skor (0-4)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="print-table-body">
+                            <!-- JS akan mengisi ini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="bg-gray-100 print-bg print-card p-4 rounded-lg text-center mt-12">
+                <p class="text-[10px] sm:text-xs text-gray-600 font-medium">
+                    <span class="font-bold">DISCLAIMER:</span> Perceived Stress Scale (PSS-10) adalah instrumen skrining psikologis, bukan alat diagnosis klinis definitif. Hasil ini dimaksudkan untuk memberikan indikasi tingkat stres subjektif dan harus dikonsultasikan dengan tenaga kesehatan mental profesional untuk penilaian lebih lanjut.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil data
+            const rawUser = localStorage.getItem('pss10_user');
+            const rawAnswers = localStorage.getItem('pss10_answers');
+            
+            if (!rawUser || !rawAnswers) {
+                alert("Data tidak lengkap untuk dicetak.");
+                return;
+            }
+
+            const user = JSON.parse(rawUser);
+            const answers = JSON.parse(rawAnswers);
+
+            // Set Identitas
+            document.getElementById('print-name').textContent = user.name || '-';
+            
+            let genderText = '-';
+            if (user.gender === 'L') genderText = 'Laki-laki';
+            if (user.gender === 'P') genderText = 'Perempuan';
+            document.getElementById('print-gender').textContent = genderText;
+            
+            document.getElementById('print-age').textContent = user.age ? `${user.age} Tahun` : '-';
+            
+            // Format date
+            let dateText = user.date;
+            if (user.date) {
+                const d = new Date(user.date);
+                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                dateText = d.toLocaleDateString('id-ID', options);
+            }
+            document.getElementById('print-date').textContent = dateText || '-';
+
+            // Hitung Skor
+            let totalScore = 0;
+            const reversedIndices = [3, 4, 6, 7];
+
+            answers.forEach((ans, index) => {
+                if (reversedIndices.includes(index)) {
+                    totalScore += (4 - ans);
+                } else {
+                    totalScore += ans;
+                }
+            });
+
+            document.getElementById('print-score').textContent = totalScore;
+
+            // Kategori
+            const catBox = document.getElementById('print-category-box');
+            const catTextWrap = document.getElementById('print-category-text-wrap');
+            const catText = document.getElementById('print-category');
+            
+            const interp1 = document.getElementById('print-interp-1');
+            const interp2 = document.getElementById('print-interp-2');
+
+            if (totalScore <= 13) {
+                catBox.className = "bg-green-50 print-bg print-card rounded-xl border border-green-100 p-6";
+                catTextWrap.className = "flex items-center text-green-700";
+                catText.textContent = "Stres Ringan";
+                
+                interp1.textContent = `Skor ${totalScore} menunjukkan bahwa mahasiswa saat ini mengalami tingkat stres ringan.`;
+                interp2.textContent = "Mahasiswa memiliki ketahanan mental yang baik dalam menghadapi tantangan akademik. Disarankan untuk tetap mempertahankan gaya hidup seimbang.";
+            } else if (totalScore <= 26) {
+                catBox.className = "bg-yellow-50 print-bg print-card rounded-xl border border-yellow-200 p-6";
+                catTextWrap.className = "flex items-center text-yellow-700";
+                catText.textContent = "Stres Sedang";
+                
+                interp1.textContent = `Skor ${totalScore} menunjukkan bahwa mahasiswa saat ini mengalami tingkat stres sedang.`;
+                interp2.textContent = "Anda mungkin merasa kewalahan oleh beban akademik atau masalah pribadi akhir-akhir ini. Anda mungkin merasa kurang memiliki kontrol atas situasi hidup Anda, yang merupakan respon normal bagi mahasiswa di masa-masa sibuk.";
+            } else {
+                catBox.className = "bg-red-50 print-bg print-card rounded-xl border border-red-200 p-6";
+                catTextWrap.className = "flex items-center text-red-700";
+                catText.textContent = "Stres Berat";
+                
+                interp1.textContent = `Skor ${totalScore} menunjukkan bahwa mahasiswa saat ini mengalami tingkat stres berat.`;
+                interp2.textContent = "Beban yang dirasakan saat ini cukup berat dan mulai memengaruhi kualitas hidup. Sangat disarankan untuk segera menghubungi Unit Layanan Psikologi Kampus guna mendapatkan pendampingan.";
+            }
+
+            // Tabel
+            const questions = [
+                "Seberapa sering Anda merasa kesal karena sesuatu yang terjadi secara tidak terduga?",
+                "Seberapa sering Anda merasa tidak mampu mengendalikan hal-hal penting dalam hidup?",
+                "Seberapa sering Anda merasa gelisah dan tertekan?",
+                "Seberapa sering Anda yakin dengan kemampuan menangani masalah pribadi?",
+                "Seberapa sering Anda merasa segala sesuatunya berjalan sesuai keinginan?",
+                "Seberapa sering Anda merasa tidak mampu menangani hal-hal yang harus dilakukan?",
+                "Seberapa sering Anda mampu mengendalikan kejengkelan dalam hidup?",
+                "Seberapa sering Anda merasa mampu mengatasi segala hal?",
+                "Seberapa sering Anda marah karena hal-hal yang terjadi di luar kendali?",
+                "Seberapa sering Anda merasa kesulitan menumpuk hingga tidak bisa diatasi?"
+            ];
+
+            const tbody = document.getElementById('print-table-body');
+            questions.forEach((q, i) => {
+                const tr = document.createElement('tr');
+                tr.className = "bg-white border-b border-gray-200";
+                
+                // Menghitung skor final yang digunakan untuk pertanyaan ini
+                const rawVal = answers[i];
+                const finalVal = reversedIndices.includes(i) ? (4 - rawVal) : rawVal;
+
+                tr.innerHTML = `
+                    <td class="px-4 py-3 border border-gray-200 text-center text-gray-500">${i + 1}</td>
+                    <td class="px-4 py-3 border border-gray-200 font-medium text-gray-800">${q}</td>
+                    <td class="px-4 py-3 border border-gray-200 text-center font-bold text-slate-900">${finalVal}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi & Kesejahteraan - MindCalm PSS-10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#315273',
+                        secondary: '#f3f4f6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="text-xl font-bold text-primary"><a href="index.html">MindCalm PSS-10</a></div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            
+            <!-- Hero Banner -->
+            <div class="bg-primary rounded-3xl p-10 sm:p-14 text-white shadow-xl">
+                <h1 class="text-3xl sm:text-4xl font-bold mb-4">Edukasi & Kesejahteraan</h1>
+                <p class="text-blue-100 max-w-2xl text-lg leading-relaxed">
+                    Temukan panduan praktis untuk menjaga kesehatan mental dan mengelola dinamika kehidupan perkuliahan dengan lebih tenang.
+                </p>
+            </div>
+
+            <!-- Card 1: Apa itu PSS-10 -->
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-10 sm:p-14">
+                <div class="flex items-center text-primary mb-4">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <span class="text-xs font-bold uppercase tracking-wider">Mengenal Alat Ukur</span>
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Apa itu PSS-10?</h2>
+                <div class="prose prose-slate max-w-none text-gray-600 leading-relaxed space-y-4 font-medium">
+                    <p>
+                        <strong>Perceived Stress Scale (PSS-10)</strong> adalah instrumen psikologis yang paling umum digunakan untuk mengukur persepsi stres. Dikembangkan oleh Sheldon Cohen, skala ini membantu Anda memahami seberapa stres situasi dalam hidup Anda dirasakan.
+                    </p>
+                    <p>
+                        PSS-10 tidak mendiagnosis penyakit, melainkan memberikan gambaran sejauh mana Anda merasa hidup Anda tidak terduga, tidak terkendali, dan terbebani.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Navigasi Stres -->
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="h-64 sm:h-80 w-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Suasana Kampus" class="w-full h-full object-cover">
+                </div>
+                <div class="p-10 sm:p-14">
+                    <div class="text-primary mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider">Manajemen Kampus</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 leading-tight">Navigasi Stres di Lingkungan Kampus</h2>
+                    <div class="text-gray-600 leading-relaxed font-medium">
+                        <p>
+                            Kehidupan mahasiswa sering kali penuh dengan tenggat waktu, ekspektasi akademik, dan dinamika sosial. Untuk menjaga keseimbangan, cobalah teknik "Box Breathing" saat merasa kewalahan di kelas. Selain itu, jangan ragu untuk menetapkan batasan (boundaries) pada kegiatan organisasi jika itu mulai mengganggu kesehatan mental Anda. Kampus adalah tempat belajar, termasuk belajar mengenali kapasitas diri sendiri.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Kontak Darurat -->
+            <div class="bg-slate-200 rounded-3xl p-10 sm:p-14 flex flex-col sm:flex-row items-center justify-between shadow-inner">
+                <div class="mb-6 sm:mb-0">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Butuh teman bicara?</h2>
+                    <a href="#" class="inline-flex items-center text-primary font-bold hover:underline transition-all group">
+                        Daftar Kontak Darurat 
+                        <svg class="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+                <div class="bg-white p-4 rounded-full shadow-sm flex-shrink-0">
+                    <svg class="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2a10 10 0 0 0-10 10v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7a10 10 0 0 0-10-10zm8 10v4c0 1.1-.9 2-2 2h-1.5v-6H18a8 8 0 0 0-12 0h1.5v6H6c-1.1 0-2-.9-2-2v-4a8.001 8.001 0 0 1 16 0z"/>
+                        <path d="M12 11a3 3 0 0 0-3 3v2a3 3 0 0 0 6 0v-2a3 3 0 0 0-3-3z"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white py-8 border-t border-gray-200 text-sm text-gray-500 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <span class="font-bold text-gray-700">MindCalm PSS-10</span><br>
+            © 2026 Universitas Anda
+        </div>
+    </footer>
+
+</body>
+</html>
