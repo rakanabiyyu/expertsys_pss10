@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Analisis - MindCalm PSS-10</title>
+    <title>Analysis Results - MindCalm PSS-10</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,10 +41,10 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Hasil Analisis {{ name }}</h1>
+                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Analysis Results for {{ name }}</h1>
                 <p class="text-gray-600">
-                    Kami telah menganalisis jawaban Anda berdasarkan skala PSS-10. Berikut adalah gambaran kondisi stres
-                    Anda saat ini beserta langkah-langkah yang direkomendasikan.
+                    We have analyzed your answers based on the PSS-10 scale. Here is an overview of your current stress
+                    condition along with recommended steps.
                 </p>
             </div>
 
@@ -54,7 +54,7 @@
                 <div class="lg:col-span-5 flex flex-col">
                     <div
                         class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 flex-grow flex flex-col items-center justify-center text-center">
-                        <h3 class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Skor Total PSS-10
+                        <h3 class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-8">Total PSS-10 Score
                         </h3>
 
                         <div class="relative w-48 h-48 mb-6">
@@ -69,15 +69,15 @@
                             </svg>
                             <div class="absolute inset-0 flex flex-col items-center justify-center">
                                 <span class="text-5xl font-bold text-slate-900" id="score-text">0</span>
-                                <span class="text-xs text-gray-500 font-medium mt-1">Skor Maks: 40</span>
+                                <span class="text-xs text-gray-500 font-medium mt-1">Max Score: 40</span>
                             </div>
                         </div>
 
                         <div id="category-badge" class="px-4 py-1.5 rounded-full text-sm font-medium mb-2">
-                            Kategori: Menghitung...
+                            Category: Calculating...
                         </div>
                         <div class="px-4 py-1.5 rounded-full text-xs font-semibold mb-6 bg-blue-100 text-blue-700">
-                            Tingkat Kepastian (CF): {{ cf_percentage }}%
+                            Certainty Factor (CF): {{ cf_percentage }}%
                         </div>
 
                         <p class="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto" id="summary-text">
@@ -99,9 +99,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-slate-900 mb-2">Interpretasi Hasil</h3>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Result Interpretation</h3>
                                 <p class="text-gray-600 text-sm leading-relaxed" id="interpretation-text">
-                                    Menghitung hasil interpretasi berdasarkan skor Anda...
+                                    Calculating interpretation based on your score...
                                 </p>
                             </div>
                         </div>
@@ -117,28 +117,28 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-slate-900 mb-2">Gejala Dominan</h3>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Dominant Symptom</h3>
                                 <p class="text-gray-600 text-sm leading-relaxed">
-                                    {{ dominant_symptom }} Berdasarkan analisis sistem pakar, aspek ini memberikan
-                                    kontribusi stres terbesar bagi Anda.
+                                    {{ dominant_symptom }} Based on our expert system analysis, this aspect contributes
+                                    the most to your stress.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-slate-100 rounded-2xl border border-gray-200 p-6" id="institution-support">
-                        <h4 class="font-bold text-slate-900 mb-2">Dukungan Institusi</h4>
-                        <p class="text-gray-700 text-sm" id="support-text">...</p>
+                        <h4 class="font-bold text-slate-900 mb-2">Understanding Your Stress</h4>
+                        <p class="text-gray-700 text-sm leading-relaxed" id="support-text">...</p>
                     </div>
 
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
                         <a href="{{ url_for('index') }}"
                             class="flex-1 flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-                            Kembali
+                            Back
                         </a>
                         <a href="{{ url_for('print_page') }}"
                             class="flex-1 flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-                            Cetak Hasil
+                            Print Results
                         </a>
                     </div>
                 </div>
@@ -151,8 +151,8 @@
                 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                     alt="Perpustakaan" class="w-full h-full object-cover filter brightness-50">
                 <div class="absolute inset-0 flex items-end p-8">
-                    <p class="text-white text-lg font-medium">Ingatlah, kesehatan mental Anda jauh lebih penting
-                        daripada nilai satu mata kuliah.</p>
+                    <p class="text-white text-lg font-medium">Remember, your mental health is far more important than a
+                        single grade.</p>
                 </div>
             </div>
         </div>
@@ -178,35 +178,35 @@
             const interpText = document.getElementById('interpretation-text');
             const support = document.getElementById('support-text');
 
-            if (totalScore <= 13) {
+            if (totalScore <= 14) {
                 // Ringan
-                categoryBadge.textContent = "Kategori: Stres Ringan";
+                categoryBadge.textContent = "Category: Low Stress";
                 categoryBadge.className = "px-4 py-1.5 rounded-full text-sm font-medium mb-6 bg-green-100 text-green-700";
 
-                summaryText.textContent = `"Skor Anda menunjukkan bahwa Anda mampu mengelola tekanan sehari-hari dengan sangat baik."`;
-                interpText.textContent = "Hasil tes Anda menunjukkan tingkat stres yang tergolong ringan. Ini berarti Anda memiliki ketahanan mental yang baik dalam menghadapi tantangan akademik saat ini. Tetap pertahankan gaya hidup seimbang yang Anda jalani.";
+                summaryText.textContent = `"Your score indicates that you are able to manage daily pressures very well."`;
+                interpText.textContent = "Your test results show a low level of stress. This means you have good mental resilience in facing current academic challenges. Keep maintaining your balanced lifestyle.";
 
-                support.textContent = "Sebagai mahasiswa dengan stres ringan, terus gunakan fasilitas kampus seperti perpustakaan atau ruang terbuka untuk relaksasi mandiri.";
+                support.textContent = "Low stress is a normal part of campus life. It typically acts as a motivator rather than a hindrance, helping you stay focused and productive without feeling overwhelmed.";
 
             } else if (totalScore <= 26) {
                 // Sedang
-                categoryBadge.textContent = "Kategori: Stres Sedang";
+                categoryBadge.textContent = "Category: Moderate Stress";
                 categoryBadge.className = "px-4 py-1.5 rounded-full text-sm font-medium mb-6 bg-yellow-100 text-yellow-700";
 
-                summaryText.textContent = `"Skor Anda menunjukkan adanya tekanan yang signifikan, namun masih dalam batas yang dapat dikelola dengan strategi yang tepat."`;
-                interpText.textContent = "Hasil tes Anda menunjukkan bahwa Anda mungkin merasa kewalahan oleh beban akademik atau masalah pribadi akhir-akhir ini. Anda mungkin merasa kurang memiliki kontrol atas situasi hidup Anda, yang merupakan respon normal bagi mahasiswa di masa-masa sibuk.";
+                summaryText.textContent = `"Your score indicates significant pressure, but it is still within manageable limits with the right strategies."`;
+                interpText.textContent = "Your test results indicate that you might be feeling overwhelmed by academic load or personal issues lately. You might feel a lack of control over your life situations, which is a normal response for students during busy periods.";
 
-                support.textContent = "Sebagai mahasiswa dengan stres sedang, kami menyarankan sesi konseling ringan dengan Unit Layanan Psikologi Kampus untuk strategi manajemen diri.";
+                support.textContent = "Moderate stress often arises during midterms or busy periods. While common, prolonged moderate stress can begin to affect your energy levels and concentration if left unchecked.";
 
             } else {
                 // Berat
-                categoryBadge.textContent = "Kategori: Stres Berat";
+                categoryBadge.textContent = "Category: High Stress";
                 categoryBadge.className = "px-4 py-1.5 rounded-full text-sm font-medium mb-6 bg-red-100 text-red-700";
 
-                summaryText.textContent = `"Skor Anda menunjukkan tingkat tekanan yang tinggi. Sangat disarankan untuk mencari dukungan tambahan."`;
-                interpText.textContent = "Hasil tes Anda menunjukkan bahwa beban yang Anda rasakan saat ini cukup berat dan mulai memengaruhi kualitas hidup Anda. Merasa seperti ini adalah sinyal penting dari tubuh bahwa Anda membutuhkan jeda dan dukungan dari orang lain.";
+                summaryText.textContent = `"Your score indicates a high level of pressure. It is highly recommended to seek additional support."`;
+                interpText.textContent = "Your test results show that your current burden is quite heavy and starting to affect your quality of life. Feeling this way is an important signal from your body that you need a break and support from others.";
 
-                support.textContent = "Sangat disarankan untuk segera menghubungi Unit Layanan Psikologi Kampus guna mendapatkan pendampingan profesional dari psikolog/konselor.";
+                support.textContent = "It is highly recommended to immediately contact the Campus Psychology Services to get professional assistance from a psychologist/counselor.";
             }
         });
     </script>

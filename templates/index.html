@@ -41,12 +41,11 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold text-primary">MindCalm PSS-10</div>
             <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#tes-stres" class="nav-link text-primary border-b-2 border-primary pb-1 transition-colors">Tes
-                    Stres</a>
+                <a href="#tes-stres" class="nav-link text-primary border-b-2 border-primary pb-1 transition-colors">Stress Test</a>
                 <a href="#informasi"
-                    class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Informasi</a>
+                    class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Information</a>
                 <a href="#bantuan"
-                    class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Bantuan</a>
+                    class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Help</a>
             </div>
         </nav>
     </header>
@@ -54,16 +53,14 @@
     <section id="tes-stres" class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
             <h1 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900 mb-6">
-                Kenali Tingkat Stresmu, Mulai Perjalanan Sejahteramu
+                Know Your Stress Level,<br>Start Your Wellness Journey
             </h1>
             <p class="text-gray-600 mb-8 leading-relaxed">
-                Sistem pakar berbasis PSS-10 membantu Anda mengidentifikasi beban pikiran secara ilmiah dan rahasia.
-                Hadapi tantangan akademik dengan ketenangan yang terukur.
+                The PSS-10 based expert system helps you identify mental burden scientifically and confidentially. Face academic challenges with measurable calmness.
             </p>
             <div class="flex space-x-4">
                 <a href="{{ url_for('register') }}"
-                    class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Mulai
-                    Tes Sekarang</a>
+                    class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Start Test Now</a>
             </div>
         </div>
         <div class="relative">
@@ -78,7 +75,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </div>
-                <p class="text-gray-700 text-xs font-semibold">Terverifikasi Berdasarkan Perceived Stress Scale (PSS-10)
+                <p class="text-gray-700 text-xs font-semibold">Verified Based on the Perceived Stress Scale (PSS-10)
                 </p>
             </div>
         </div>
@@ -86,22 +83,19 @@
 
     <section id="informasi" class="bg-white py-16">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-12">Mengapa Menggunakan PSS-10?</h2>
+            <h2 class="text-2xl font-bold mb-12">Why Use PSS-10?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-slate-50 p-8 rounded-xl text-left border border-gray-100 shadow-sm">
-                    <h3 class="text-lg font-semibold mb-3">Validitas Ilmiah</h3>
-                    <p class="text-gray-500 text-sm">Instrumen yang diakui secara global untuk mengukur persepsi stres
-                        dalam kehidupan sehari-hari dengan akurasi tinggi.</p>
+                    <h3 class="text-lg font-semibold mb-3">Scientific Validity</h3>
+                    <p class="text-gray-500 text-sm">A globally recognized instrument for measuring perceived stress in daily life with high accuracy.</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-xl text-left border border-gray-100 shadow-sm">
-                    <h3 class="text-lg font-semibold mb-3">Privasi Terjamin</h3>
-                    <p class="text-gray-500 text-sm">Data Anda sepenuhnya anonim. Kami percaya bahwa rasa aman adalah
-                        langkah pertama menuju kesejahteraan mental.</p>
+                    <h3 class="text-lg font-semibold mb-3">Guaranteed Privacy</h3>
+                    <p class="text-gray-500 text-sm">Your data is completely anonymous. We believe that feeling safe is the first step towards mental wellness.</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-xl text-left border border-gray-100 shadow-sm">
-                    <h3 class="text-lg font-semibold mb-3">Cepat & Ringkas</h3>
-                    <p class="text-gray-500 text-sm">Hanya 10 pertanyaan sederhana untuk memberikan gambaran kondisi
-                        Anda.</p>
+                    <h3 class="text-lg font-semibold mb-3">Fast & Concise</h3>
+                    <p class="text-gray-500 text-sm">Only 10 simple questions to provide an overview of your condition.</p>
                 </div>
             </div>
         </div>
@@ -112,16 +106,15 @@
             class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
 
         <div>
-            <h2 class="text-3xl font-bold mb-8">Tiga Langkah Menuju Ketenangan</h2>
+            <h2 class="text-3xl font-bold mb-8">Three Steps to Calmness</h2>
             <div class="space-y-8">
                 <div class="flex items-start">
                     <div
                         class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">
                         1</div>
                     <div>
-                        <h4 class="font-bold text-lg">Jawab Pertanyaan</h4>
-                        <p class="text-gray-500 text-sm mt-1">Refleksikan perasaan dan pikiran Anda selama satu bulan
-                            terakhir melalui kuesioner interaktif kami.</p>
+                        <h4 class="font-bold text-lg">Answer Questions</h4>
+                        <p class="text-gray-500 text-sm mt-1">Reflect on your feelings and thoughts over the last month through our interactive questionnaire.</p>
                     </div>
                 </div>
                 <div class="flex items-start">
@@ -129,9 +122,8 @@
                         class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">
                         2</div>
                     <div>
-                        <h4 class="font-bold text-lg">Dapatkan Hasil Seketika</h4>
-                        <p class="text-gray-500 text-sm mt-1">Sistem pakar kami akan menganalisis skor Anda dan
-                            menentukan tingkat stres yang Anda alami secara akurat.</p>
+                        <h4 class="font-bold text-lg">Get Instant Results</h4>
+                        <p class="text-gray-500 text-sm mt-1">Our expert system will analyze your score and accurately determine the level of stress you are experiencing.</p>
                     </div>
                 </div>
                 <div class="flex items-start">
@@ -139,9 +131,8 @@
                         class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">
                         3</div>
                     <div>
-                        <h4 class="font-bold text-lg">Rekomendasi Ahli</h4>
-                        <p class="text-gray-500 text-sm mt-1">Terima saran praktis dan referensi bantuan profesional
-                            yang disesuaikan dengan hasil tes Anda.</p>
+                        <h4 class="font-bold text-lg">Expert Recommendations</h4>
+                        <p class="text-gray-500 text-sm mt-1">Receive practical advice and professional help references tailored to your test results.</p>
                     </div>
                 </div>
             </div>
@@ -158,22 +149,18 @@
                         </path>
                     </svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Ruang Aman Anda</h3>
-                <p class="text-gray-500 italic">"Sistem ini bukan untuk melabeli Anda, melainkan untuk memberikan cermin
-                    yang jujur. Hasil tes hanya digunakan untuk pertumbuhan pribadi Anda dan tidak akan dibagikan kepada
-                    institusi atau pihak ketiga mana pun."</p>
+                <h3 class="text-2xl font-bold mb-4">Your Safe Space</h3>
+                <p class="text-gray-500 italic">"This system is not meant to label you, but rather to provide an honest reflection. Test results are used strictly for your personal growth and will not be shared with any institution or third party."</p>
             </div>
         </div>
     </section>
 
     <section id="bantuan" class="bg-primary py-20 text-center text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-4">Belum siap untuk mengambil tes?</h2>
-            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Tidak apa-apa. Anda bisa mulai dengan membaca sumber daya
-                edukasi kami tentang manajemen stres dan kesejahteraan mental mahasiswa.</p>
+            <h2 class="text-3xl font-bold mb-4">Not ready to take the test?</h2>
+            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">That's okay. You can start by reading our educational resources on stress management and student mental wellness.</p>
             <a href="{{ url_for('education') }}"
-                class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">Jelajahi
-                Edukasi</a>
+                class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">Explore Education</a>
         </div>
     </section>
 

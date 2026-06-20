@@ -32,13 +32,13 @@ def test():
 @app.route('/api/calculate-score', methods=['POST'])
 def calculate_score():
     if 'user_name' not in session:
-        return jsonify({"error": "Sesi tidak valid, silakan registrasi ulang"}), 401
+        return jsonify({"error": "Invalid session, please register again"}), 401
         
     data = request.json
     answers = data.get('answers', [])
     
     if len(answers) != 10:
-        return jsonify({"error": "Data jawaban tidak lengkap"}), 400
+        return jsonify({"error": "Incomplete answer data"}), 400
 
     # 1. Hitung Total Score PSS-10 Konvensional
     reverse_indices = [3, 4, 6, 7]
@@ -69,16 +69,16 @@ def calculate_score():
     ]
 
     gejala_text = [
-        "kesal karena sesuatu yang terjadi secara tak terduga (PSS 1)",
-        "merasa tidak mampu mengendalikan hal-hal penting dalam hidup (PSS 2)",
-        "merasa gelisah dan tertekan (PSS 3)",
-        "kurangnya keyakinan dalam menangani masalah pribadi (PSS 4)",
-        "merasa hal-hal tidak berjalan sesuai keinginan (PSS 5)",
-        "merasa tidak dapat menangani semua hal yang harus dilakukan (PSS 6)",
-        "ketidakmampuan mengendalikan rasa kesal dalam hidup (PSS 7)",
-        "merasa tidak mampu mengatasi berbagai hal (PSS 8)",
-        "marah karena hal-hal yang terjadi di luar kendali (PSS 9)",
-        "merasa kesulitan menumpuk sangat banyak sehingga tidak bisa diatasi (PSS 10)"
+        "being upset because of something that happened unexpectedly (PSS 1)",
+        "feeling unable to control the important things in your life (PSS 2)",
+        "feeling nervous and stressed (PSS 3)",
+        "lacking confidence in your ability to handle personal problems (PSS 4)",
+        "feeling that things were not going your way (PSS 5)",
+        "feeling unable to cope with all the things you had to do (PSS 6)",
+        "inability to control irritations in your life (PSS 7)",
+        "feeling unable to stay on top of things (PSS 8)",
+        "being angered because of things outside of your control (PSS 9)",
+        "feeling difficulties were piling up so high that you could not overcome them (PSS 10)"
     ]
 
     cf_combine = 0.0
@@ -101,16 +101,16 @@ def calculate_score():
         cf_combine = cf_combine + cf_evidence * (1 - cf_combine)
 
     cf_percentage = round(cf_combine * 100, 2)
-    dominant_symptom_text = f"Gejala dominan Anda adalah {gejala_text[dominant_symptom_idx]}."
+    dominant_symptom_text = f"Your dominant symptom is {gejala_text[dominant_symptom_idx]}."
 
     # Kategori Stres PSS-10
     kategori = ""
     if total_score <= 14:
-        kategori = "Stres Ringan"
+        kategori = "Low Stress"
     elif total_score <= 26:
-        kategori = "Stres Sedang"
+        kategori = "Moderate Stress"
     else:
-        kategori = "Stres Berat"
+        kategori = "High Stress"
 
     # Simpan hasil di session
     session['score'] = total_score
