@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,43 +25,61 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800">
 
     <header class="sticky top-0 z-50 bg-slate-50/90 backdrop-blur-md border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold text-primary">MindCalm PSS-10</div>
             <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#tes-stres" class="nav-link text-primary border-b-2 border-primary pb-1 transition-colors">Tes Stres</a>
-                <a href="#informasi" class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Informasi</a>
-                <a href="#bantuan" class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Bantuan</a>
+                <a href="#tes-stres" class="nav-link text-primary border-b-2 border-primary pb-1 transition-colors">Tes
+                    Stres</a>
+                <a href="#informasi"
+                    class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Informasi</a>
+                <a href="#bantuan"
+                    class="nav-link text-gray-500 hover:text-primary border-b-2 border-transparent pb-1 transition-colors">Bantuan</a>
             </div>
         </nav>
     </header>
 
     <section id="tes-stres" class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-            <p class="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">Eksklusif untuk Mahasiswa</p>
             <h1 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900 mb-6">
                 Kenali Tingkat Stresmu, Mulai Perjalanan Sejahteramu
             </h1>
             <p class="text-gray-600 mb-8 leading-relaxed">
-                Sistem pakar berbasis PSS-10 membantu Anda mengidentifikasi beban pikiran secara ilmiah dan rahasia. Hadapi tantangan akademik dengan ketenangan yang terukur.
+                Sistem pakar berbasis PSS-10 membantu Anda mengidentifikasi beban pikiran secara ilmiah dan rahasia.
+                Hadapi tantangan akademik dengan ketenangan yang terukur.
             </p>
             <div class="flex space-x-4">
-                <a href="{{ url_for('register') }}" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Mulai Tes Sekarang</a>
+                <a href="{{ url_for('register') }}"
+                    class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Mulai
+                    Tes Sekarang</a>
             </div>
         </div>
         <div class="relative">
-            <img src="{{ url_for('static', filename='assets/hero-image.jpg') }}" alt="Workspace" class="rounded-2xl shadow-xl w-full object-cover h-[400px]">
-            <div class="absolute bottom-6 left-[-20px] bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3 w-64 text-sm">
+            <img src="{{ url_for('static', filename='assets/hero-image.jpg') }}" alt="Workspace"
+                class="rounded-2xl shadow-xl w-full object-cover h-[400px]">
+            <div
+                class="absolute bottom-6 left-[-20px] bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3 w-64 text-sm">
                 <div class="bg-green-100 text-green-600 p-1 rounded-full">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </div>
-                <p class="text-gray-700 text-xs font-semibold">Terverifikasi Berdasarkan Perceived Stress Scale (PSS-10)</p>
+                <p class="text-gray-700 text-xs font-semibold">Terverifikasi Berdasarkan Perceived Stress Scale (PSS-10)
+                </p>
             </div>
         </div>
     </section>
@@ -71,45 +90,58 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-slate-50 p-8 rounded-xl text-left border border-gray-100 shadow-sm">
                     <h3 class="text-lg font-semibold mb-3">Validitas Ilmiah</h3>
-                    <p class="text-gray-500 text-sm">Instrumen yang diakui secara global untuk mengukur persepsi stres dalam kehidupan sehari-hari dengan akurasi tinggi.</p>
+                    <p class="text-gray-500 text-sm">Instrumen yang diakui secara global untuk mengukur persepsi stres
+                        dalam kehidupan sehari-hari dengan akurasi tinggi.</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-xl text-left border border-gray-100 shadow-sm">
                     <h3 class="text-lg font-semibold mb-3">Privasi Terjamin</h3>
-                    <p class="text-gray-500 text-sm">Data Anda sepenuhnya anonim. Kami percaya bahwa rasa aman adalah langkah pertama menuju kesejahteraan mental.</p>
+                    <p class="text-gray-500 text-sm">Data Anda sepenuhnya anonim. Kami percaya bahwa rasa aman adalah
+                        langkah pertama menuju kesejahteraan mental.</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-xl text-left border border-gray-100 shadow-sm">
                     <h3 class="text-lg font-semibold mb-3">Cepat & Ringkas</h3>
-                    <p class="text-gray-500 text-sm">Hanya 10 pertanyaan sederhana untuk memberikan gambaran kondisi Anda.</p>
+                    <p class="text-gray-500 text-sm">Hanya 10 pertanyaan sederhana untuk memberikan gambaran kondisi
+                        Anda.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <img src="{{ url_for('static', filename='assets/plant.jpg') }}" alt="Ilustrasi" class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
-        
+        <img src="{{ url_for('static', filename='assets/plant.jpg') }}" alt="Ilustrasi"
+            class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
+
         <div>
             <h2 class="text-3xl font-bold mb-8">Tiga Langkah Menuju Ketenangan</h2>
             <div class="space-y-8">
                 <div class="flex items-start">
-                    <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">1</div>
+                    <div
+                        class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">
+                        1</div>
                     <div>
                         <h4 class="font-bold text-lg">Jawab Pertanyaan</h4>
-                        <p class="text-gray-500 text-sm mt-1">Refleksikan perasaan dan pikiran Anda selama satu bulan terakhir melalui kuesioner interaktif kami.</p>
+                        <p class="text-gray-500 text-sm mt-1">Refleksikan perasaan dan pikiran Anda selama satu bulan
+                            terakhir melalui kuesioner interaktif kami.</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">2</div>
+                    <div
+                        class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">
+                        2</div>
                     <div>
                         <h4 class="font-bold text-lg">Dapatkan Hasil Seketika</h4>
-                        <p class="text-gray-500 text-sm mt-1">Sistem pakar kami akan menganalisis skor Anda dan menentukan tingkat stres yang Anda alami secara akurat.</p>
+                        <p class="text-gray-500 text-sm mt-1">Sistem pakar kami akan menganalisis skor Anda dan
+                            menentukan tingkat stres yang Anda alami secara akurat.</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">3</div>
+                    <div
+                        class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0 mt-1">
+                        3</div>
                     <div>
                         <h4 class="font-bold text-lg">Rekomendasi Ahli</h4>
-                        <p class="text-gray-500 text-sm mt-1">Terima saran praktis dan referensi bantuan profesional yang disesuaikan dengan hasil tes Anda.</p>
+                        <p class="text-gray-500 text-sm mt-1">Terima saran praktis dan referensi bantuan profesional
+                            yang disesuaikan dengan hasil tes Anda.</p>
                     </div>
                 </div>
             </div>
@@ -120,10 +152,16 @@
         <div class="container mx-auto px-6">
             <div class="bg-white max-w-3xl mx-auto p-10 rounded-2xl text-center shadow-sm">
                 <div class="text-primary mb-4 flex justify-center">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                        </path>
+                    </svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Ruang Aman Anda</h3>
-                <p class="text-gray-500 italic">"Sistem ini bukan untuk melabeli Anda, melainkan untuk memberikan cermin yang jujur. Hasil tes hanya digunakan untuk pertumbuhan pribadi Anda dan tidak akan dibagikan kepada institusi atau pihak ketiga mana pun."</p>
+                <p class="text-gray-500 italic">"Sistem ini bukan untuk melabeli Anda, melainkan untuk memberikan cermin
+                    yang jujur. Hasil tes hanya digunakan untuk pertumbuhan pribadi Anda dan tidak akan dibagikan kepada
+                    institusi atau pihak ketiga mana pun."</p>
             </div>
         </div>
     </section>
@@ -131,15 +169,19 @@
     <section id="bantuan" class="bg-primary py-20 text-center text-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-4">Belum siap untuk mengambil tes?</h2>
-            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Tidak apa-apa. Anda bisa mulai dengan membaca sumber daya edukasi kami tentang manajemen stres dan kesejahteraan mental mahasiswa.</p>
-            <a href="{{ url_for('education') }}" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">Jelajahi Edukasi</a>
+            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Tidak apa-apa. Anda bisa mulai dengan membaca sumber daya
+                edukasi kami tentang manajemen stres dan kesejahteraan mental mahasiswa.</p>
+            <a href="{{ url_for('education') }}"
+                class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">Jelajahi
+                Edukasi</a>
         </div>
     </section>
 
-    <footer class="container mx-auto px-6 py-6 border-t border-gray-200 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center bg-white">
+    <footer
+        class="container mx-auto px-6 py-6 border-t border-gray-200 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center bg-white">
         <div>
             <span class="font-bold text-gray-700">MindCalm PSS-10</span><br>
-            © 2026 Universitas Anda
+            © 2026 Universitas Gunadarma
         </div>
         <div class="mt-4 md:mt-0">
             v 1.0.0
@@ -149,15 +191,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('.nav-link');
-            
+
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function () {
                     // Reset styling untuk semua link
                     navLinks.forEach(l => {
                         l.classList.remove('text-primary', 'border-primary');
                         l.classList.add('text-gray-500', 'hover:text-primary', 'border-transparent');
                     });
-                    
+
                     // Beri styling aktif untuk link yang diklik
                     this.classList.remove('text-gray-500', 'hover:text-primary', 'border-transparent');
                     this.classList.add('text-primary', 'border-primary');
@@ -166,4 +208,5 @@
         });
     </script>
 </body>
+
 </html>

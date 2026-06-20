@@ -1,3 +1,4 @@
+# pyrefly: ignore [missing-import]
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import os
 
@@ -39,31 +40,84 @@ def calculate_score():
     if len(answers) != 10:
         return jsonify({"error": "Data jawaban tidak lengkap"}), 400
 
-    # Pertanyaan ke-4, 5, 7, 8 adalah pertanyaan positif (perlu di-reverse)
-    # Index array mulai dari 0, jadi item ke-4 adalah index 3
+    # 1. Hitung Total Score PSS-10 Konvensional
     reverse_indices = [3, 4, 6, 7]
     total_score = 0
+    adjusted_answers = []
 
     for i, score in enumerate(answers):
         if i in reverse_indices:
-            # Skoring terbalik: 0 jadi 4, 1 jadi 3, 2 jadi 2, 3 jadi 1, 4 jadi 0
-            total_score += (4 - score)
+            adjusted_val = 4 - score
+            total_score += adjusted_val
+            adjusted_answers.append(adjusted_val)
         else:
             total_score += score
+            adjusted_answers.append(score)
+
+    # 2. Sistem Pakar Certainty Factor (CF)
+    cf_experts = [
+        0.41, # PSS 1
+        0.54, # PSS 2
+        0.46, # PSS 3
+        0.33, # PSS 4 (Reverse)
+        0.42, # PSS 5 (Reverse)
+        0.61, # PSS 6
+        0.59, # PSS 7 (Reverse)
+        0.72, # PSS 8 (Reverse)
+        0.77, # PSS 9
+        0.63  # PSS 10
+    ]
+
+    gejala_text = [
+        "kesal karena sesuatu yang terjadi secara tak terduga (PSS 1)",
+        "merasa tidak mampu mengendalikan hal-hal penting dalam hidup (PSS 2)",
+        "merasa gelisah dan tertekan (PSS 3)",
+        "kurangnya keyakinan dalam menangani masalah pribadi (PSS 4)",
+        "merasa hal-hal tidak berjalan sesuai keinginan (PSS 5)",
+        "merasa tidak dapat menangani semua hal yang harus dilakukan (PSS 6)",
+        "ketidakmampuan mengendalikan rasa kesal dalam hidup (PSS 7)",
+        "merasa tidak mampu mengatasi berbagai hal (PSS 8)",
+        "marah karena hal-hal yang terjadi di luar kendali (PSS 9)",
+        "merasa kesulitan menumpuk sangat banyak sehingga tidak bisa diatasi (PSS 10)"
+    ]
+
+    cf_combine = 0.0
+    max_cf_evidence = -1.0
+    dominant_symptom_idx = -1
+
+    for i in range(10):
+        # Konversi ke CF User (0-4 -> 0.0 - 1.0)
+        cf_user = adjusted_answers[i] / 4.0
+        
+        # Hitung CF Evidence
+        cf_evidence = cf_user * cf_experts[i]
+
+        # Update Gejala Dominan
+        if cf_evidence > max_cf_evidence:
+            max_cf_evidence = cf_evidence
+            dominant_symptom_idx = i
+
+        # CF Kombinasi
+        cf_combine = cf_combine + cf_evidence * (1 - cf_combine)
+
+    cf_percentage = round(cf_combine * 100, 2)
+    dominant_symptom_text = f"Gejala dominan Anda adalah {gejala_text[dominant_symptom_idx]}."
 
     # Kategori Stres PSS-10
     kategori = ""
     if total_score <= 13:
-        kategori = "Rendah"
+        kategori = "Stres Ringan"
     elif total_score <= 26:
-        kategori = "Sedang"
+        kategori = "Stres Sedang"
     else:
-        kategori = "Tinggi"
+        kategori = "Stres Berat"
 
     # Simpan hasil di session
     session['score'] = total_score
     session['category'] = kategori
     session['answers'] = answers
+    session['cf_percentage'] = cf_percentage
+    session['dominant_symptom'] = dominant_symptom_text
 
     # Berikan respons ke client bahwa sukses dan URL untuk redirect
     return jsonify({
@@ -80,8 +134,10 @@ def result():
     user_name = session.get('user_name')
     score = session.get('score')
     category = session.get('category')
+    cf_percentage = session.get('cf_percentage')
+    dominant_symptom = session.get('dominant_symptom')
     
-    return render_template('result.html', name=user_name, score=score, category=category)
+    return render_template('result.html', name=user_name, score=score, category=category, cf_percentage=cf_percentage, dominant_symptom=dominant_symptom)
 
 @app.route('/education')
 def education():
@@ -100,10 +156,13 @@ def print_page():
     user_gender = session.get('user_gender')
     user_date = session.get('user_date')
     answers = session.get('answers')
+    cf_percentage = session.get('cf_percentage')
+    dominant_symptom = session.get('dominant_symptom')
     
     return render_template('print.html', 
         name=user_name, score=score, category=category, 
-        age=user_age, gender=user_gender, date=user_date, answers=answers)
+        age=user_age, gender=user_gender, date=user_date, answers=answers,
+        cf_percentage=cf_percentage, dominant_symptom=dominant_symptom)
 
 @app.route('/logout')
 def logout():

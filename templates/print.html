@@ -73,7 +73,7 @@
             </div>
 
             <!-- Skor & Kategori -->
-            <div class="grid grid-cols-2 gap-6 mb-10">
+            <div class="grid grid-cols-2 gap-6 mb-6">
                 <div class="bg-slate-50 print-bg print-card rounded-xl border border-gray-200 p-6">
                     <p class="text-sm font-semibold text-gray-600 mb-2">Skor Total PSS-10</p>
                     <div class="flex items-baseline">
@@ -87,6 +87,23 @@
                         <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                         <span class="text-xl font-bold" id="print-category">...</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- Analisis Sistem Pakar (CF) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                <div class="bg-slate-50 print-bg print-card rounded-xl border border-gray-200 p-6 sm:col-span-1">
+                    <p class="text-sm font-semibold text-gray-600 mb-2">Tingkat Kepastian (CF)</p>
+                    <div class="flex items-baseline text-primary">
+                        <span class="text-3xl font-bold">{{ cf_percentage }}</span>
+                        <span class="text-lg text-gray-500 ml-1">%</span>
+                    </div>
+                </div>
+                <div class="bg-blue-50 print-bg print-card rounded-xl border border-blue-100 p-6 sm:col-span-2">
+                    <p class="text-sm font-semibold text-blue-700 mb-2">Gejala Dominan</p>
+                    <p class="text-blue-900 font-medium leading-relaxed">
+                        {{ dominant_symptom }}
+                    </p>
                 </div>
             </div>
 
@@ -216,16 +233,16 @@
 
             // Tabel
             const questions = [
-                "Seberapa sering Anda merasa kesal karena sesuatu yang terjadi secara tidak terduga?",
-                "Seberapa sering Anda merasa tidak mampu mengendalikan hal-hal penting dalam hidup?",
-                "Seberapa sering Anda merasa gelisah dan tertekan?",
-                "Seberapa sering Anda yakin dengan kemampuan menangani masalah pribadi?",
-                "Seberapa sering Anda merasa segala sesuatunya berjalan sesuai keinginan?",
-                "Seberapa sering Anda merasa tidak mampu menangani hal-hal yang harus dilakukan?",
-                "Seberapa sering Anda mampu mengendalikan kejengkelan dalam hidup?",
-                "Seberapa sering Anda merasa mampu mengatasi segala hal?",
-                "Seberapa sering Anda marah karena hal-hal yang terjadi di luar kendali?",
-                "Seberapa sering Anda merasa kesulitan menumpuk hingga tidak bisa diatasi?"
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa kesal karena sesuatu yang terjadi secara tidak terduga?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa bahwa Anda tidak mampu mengendalikan hal-hal penting dalam hidup Anda?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa gugup dan stres?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa percaya diri terhadap kemampuan Anda untuk menangani masalah pribadi Anda?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa bahwa segala sesuatu berjalan sesuai keinginan Anda?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa bahwa Anda tidak mampu mengatasi semua hal yang harus Anda lakukan?",
+                "Dalam satu bulan terakhir, seberapa sering Anda mampu mengendalikan hal-hal yang mengganggu dalam hidup Anda?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa bahwa Anda mampu mengendalikan keadaan?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa marah karena hal-hal yang berada di luar kendali Anda?",
+                "Dalam satu bulan terakhir, seberapa sering Anda merasa bahwa kesulitan-kesulitan menumpuk begitu besar sehingga Anda tidak mampu mengatasinya?"
             ];
 
             const tbody = document.getElementById('print-table-body');
