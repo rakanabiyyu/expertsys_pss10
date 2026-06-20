@@ -51,11 +51,11 @@
                 Sistem pakar berbasis PSS-10 membantu Anda mengidentifikasi beban pikiran secara ilmiah dan rahasia. Hadapi tantangan akademik dengan ketenangan yang terukur.
             </p>
             <div class="flex space-x-4">
-                <a href="register.html" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Mulai Tes Sekarang</a>
+                <a href="{{ url_for('register') }}" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Mulai Tes Sekarang</a>
             </div>
         </div>
         <div class="relative">
-            <img src="assets/hero-image.jpg" alt="Workspace" class="rounded-2xl shadow-xl w-full object-cover h-[400px]">
+            <img src="{{ url_for('static', filename='assets/hero-image.jpg') }}" alt="Workspace" class="rounded-2xl shadow-xl w-full object-cover h-[400px]">
             <div class="absolute bottom-6 left-[-20px] bg-white p-4 rounded-xl shadow-lg flex items-center space-x-3 w-64 text-sm">
                 <div class="bg-green-100 text-green-600 p-1 rounded-full">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
@@ -86,7 +86,7 @@
     </section>
 
     <section class="container mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <img src="assets/plant.jpg" alt="Ilustrasi" class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
+        <img src="{{ url_for('static', filename='assets/plant.jpg') }}" alt="Ilustrasi" class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
         
         <div>
             <h2 class="text-3xl font-bold mb-8">Tiga Langkah Menuju Ketenangan</h2>
@@ -132,7 +132,7 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-4">Belum siap untuk mengambil tes?</h2>
             <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Tidak apa-apa. Anda bisa mulai dengan membaca sumber daya edukasi kami tentang manajemen stres dan kesejahteraan mental mahasiswa.</p>
-            <a href="education.html" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">Jelajahi Edukasi</a>
+            <a href="{{ url_for('education') }}" class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition shadow-lg">Jelajahi Edukasi</a>
         </div>
     </section>
 

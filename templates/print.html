@@ -37,7 +37,7 @@
     <!-- Header / Navbar (No Print) -->
     <header class="bg-white border-b border-gray-200 no-print sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-primary"><a href="result.html">MindCalm PSS-10</a></div>
+            <div class="text-xl font-bold text-primary"><a href="{{ url_for('result') }}">MindCalm PSS-10</a></div>
             <button onclick="window.print()" class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-opacity-90 transition-colors">
                 Cetak PDF
             </button>
@@ -141,16 +141,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Ambil data
-            const rawUser = localStorage.getItem('pss10_user');
-            const rawAnswers = localStorage.getItem('pss10_answers');
-            
-            if (!rawUser || !rawAnswers) {
-                alert("Data tidak lengkap untuk dicetak.");
-                return;
-            }
-
-            const user = JSON.parse(rawUser);
-            const answers = JSON.parse(rawAnswers);
+            // Ambil data dari server
+            const user = {
+                name: {{ name | tojson }},
+                age: {{ age | tojson }},
+                gender: {{ gender | tojson }},
+                date: {{ date | tojson }}
+            };
+            const answers = {{ answers | tojson }};
 
             // Set Identitas
             document.getElementById('print-name').textContent = user.name || '-';

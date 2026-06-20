@@ -33,7 +33,7 @@
 
     <header class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-primary"><a href="index.html">MindCalm PSS-10</a></div>
+            <div class="text-xl font-bold text-primary"><a href="{{ url_for('index') }}">MindCalm PSS-10</a></div>
             <div class="text-sm font-medium text-gray-500">Tes Berlangsung</div>
         </div>
     </header>
@@ -186,9 +186,33 @@
                     currentStep++;
                     renderQuestion();
                 } else {
-                    // Test Finished
-                    localStorage.setItem('pss10_answers', JSON.stringify(answers));
-                    window.location.href = "result.html";
+                    // Test Finished - Send to Flask backend
+                    nextButton.textContent = "Menghitung...";
+                    nextButton.disabled = true;
+
+                    fetch("{{ url_for('calculate_score') }}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ answers: answers })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            alert(data.error);
+                            nextButton.textContent = "Lihat Hasil";
+                            nextButton.disabled = false;
+                        } else if (data.redirect_url) {
+                            window.location.href = data.redirect_url;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert("Gagal terhubung ke server.");
+                        nextButton.textContent = "Lihat Hasil";
+                        nextButton.disabled = false;
+                    });
                 }
             }
         });
