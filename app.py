@@ -105,7 +105,7 @@ def calculate_score():
 
     # Kategori Stres PSS-10
     kategori = ""
-    if total_score <= 13:
+    if total_score <= 14:
         kategori = "Stres Ringan"
     elif total_score <= 26:
         kategori = "Stres Sedang"
