@@ -1,100 +1,100 @@
-# MindCalm PSS-10: Sistem Pakar Analisis Tingkat Stres
+# MindCalm PSS-10: Stress Level Analysis Expert System
 
-MindCalm PSS-10 adalah sebuah aplikasi berbasis web (sistem pakar) yang membantu mahasiswa (atau pengguna umum) mengidentifikasi dan mengukur tingkat stres mereka menggunakan instrumen psikologis standar internasional yang diakui, yaitu **Perceived Stress Scale (PSS-10)**.
+MindCalm PSS-10 is a web-based application (expert system) designed to help students and the general public identify and measure their stress levels using an internationally recognized standard psychological instrument, the **Perceived Stress Scale (PSS-10)**.
 
-Aplikasi ini menggunakan metode *Certainty Factor* (CF) pada sistem pakarnya untuk tidak hanya menghitung skor total stres, tetapi juga menentukan **gejala dominan** yang paling berpengaruh pada kondisi psikologis pengguna beserta tingkat kepastian (CF) dari hasil tersebut.
+This application utilizes the Certainty Factor (CF) method within its expert system to not only calculate the total stress score but also determine the dominant symptom that most significantly affects the user's psychological condition, along with the degree of certainty (CF) of the result.
 
-## ⚠️ Disclaimer
-Sistem pakar ini merupakan instrumen *skrining* awal (berdasarkan PSS-10) dan **bukan** sebagai alat diagnosis medis atau klinis yang definitif. Jika Anda atau orang di sekitar Anda membutuhkan pertolongan serius terkait kesehatan mental, harap segera hubungi psikolog, psikiater, atau fasilitas layanan kesehatan terdekat.
+## Disclaimer
 
-## 🚀 Fitur Utama
+This expert system serves as an initial screening instrument (based on the PSS-10) and does not constitute a definitive medical or clinical diagnostic tool. If you or someone you know requires serious assistance regarding mental health, please contact a psychologist, psychiatrist, or the nearest healthcare facility immediately.
 
-- **Kuesioner Interaktif PSS-10**: Antarmuka modern yang nyaman untuk mengisi 10 pertanyaan standar PSS-10.
-- **Analisis Skor Otomatis**: Secara otomatis menghitung nilai (*scoring*) konvensional PSS-10 (termasuk *reverse scoring* untuk pertanyaan positif).
-- **Sistem Pakar dengan Certainty Factor**: Menemukan gejala dominan penyebab stres dan mengukur persentase keyakinan (CF).
-- **Interpretasi dan Rekomendasi**: Memberikan tingkat stres (Ringan, Sedang, Berat) beserta saran atau rekomendasi tindakan.
-- **Cetak Hasil PDF**: Fitur bagi pengguna untuk menyimpan dan mencetak hasil laporan tes (Ringkasan Klinis) untuk didiskusikan dengan konselor atau psikolog profesional.
-- **Responsif dan Modern**: Desain yang indah dan responsif di berbagai perangkat menggunakan Tailwind CSS.
+## Key Features
 
-## 🛠️ Teknologi yang Digunakan
+- **Interactive PSS-10 Questionnaire**: A modern and user-friendly interface for completing the 10 standard PSS-10 questions.
+- **Automated Score Analysis**: Automatically calculates the conventional PSS-10 score, including reverse scoring for positive items.
+- **Expert System with Certainty Factor**: Identifies the dominant symptom causing stress and measures the confidence percentage (CF).
+- **Interpretation and Context**: Provides stress level categorization (Low, Moderate, High) along with context-specific background information.
+- **Printable PDF Results**: Allows users to save and print the clinical summary report to facilitate discussions with professional counselors or psychologists.
+- **Responsive and Modern Interface**: Features an aesthetically pleasing and responsive design across various devices, built with Tailwind CSS.
+
+## Technologies Used
 
 - **Backend**: Python 3.x, Flask (Web Framework)
-- **Frontend**: HTML5, JavaScript (Vanilla), Tailwind CSS (melalui CDN)
-- **Dependency Manager** (Opsional tapi disarankan): `uv` atau `pip`
+- **Frontend**: HTML5, JavaScript (Vanilla), Tailwind CSS (via CDN)
+- **Dependency Manager**: `uv` or `pip`
 
 ---
 
-## ⚙️ Persyaratan Sistem (Prerequisites)
+## System Requirements
 
-Sebelum menjalankan aplikasi ini di komputer Anda, pastikan Anda telah menginstal:
-1. **Python** (versi 3.8 atau lebih baru). Bisa diunduh di [python.org](https://www.python.org/downloads/).
-2. **Git** (opsional, jika Anda ingin melakukan *clone* repositori).
-3. Anda juga disarankan menginstal **`uv`** (sebagai *package manager* Python yang sangat cepat), meskipun menggunakan pip bawaan Python juga tidak masalah.
+Prior to running this application on your local machine, please ensure the following software is installed:
+1. **Python** (version 3.8 or newer). Available for download at [python.org](https://www.python.org/downloads/).
+2. **Git** (optional, for repository cloning).
+3. **`uv`** (recommended as a fast Python package manager), although the standard Python `pip` is also fully supported.
 
 ---
 
-## 📖 Cara Menjalankan Aplikasi (Langkah demi Langkah)
+## Installation and Execution Guide
 
-Berikut adalah panduan lengkap cara menjalankan aplikasi ini di komputer lokal Anda:
+Follow these comprehensive steps to run the application in your local environment:
 
-### Langkah 1: Unduh Kode Program (Clone / Download)
-Jika Anda menggunakan Git, jalankan perintah ini di terminal/Command Prompt Anda:
+### Step 1: Acquire the Source Code
+If using Git, execute the following command in your terminal or command prompt:
 ```bash
 git clone https://github.com/rakanabiyyu/expertsys_pss10.git
 cd expertsys_pss10
 ```
-*(Atau Anda bisa mengunduh file `.zip` dari repositori dan mengekstraknya, lalu buka folder hasil ekstraksi di terminal Anda).*
+Alternatively, you may download the repository as a `.zip` file, extract its contents, and navigate to the extracted directory within your terminal.
 
-### Langkah 2: Buat Virtual Environment (Sangat Disarankan)
-Untuk menjaga agar dependensi (*library*) aplikasi ini tidak mengganggu *library* Python global di komputer Anda, buat sebuah *Virtual Environment*.
+### Step 2: Establish a Virtual Environment (Highly Recommended)
+To prevent the application's dependencies from interfering with your global Python libraries, it is strongly advised to create a virtual environment.
 
-**Pengguna Windows:**
+**Windows Users:**
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-**Pengguna Mac / Linux:**
+**macOS / Linux Users:**
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
-*(Setelah command ini dijalankan, di terminal Anda akan muncul tulisan `(venv)` yang menandakan Anda sudah berada di dalam virtual environment).*
+Upon successful execution, your terminal prompt will display `(venv)`, indicating the virtual environment is active.
 
-### Langkah 3: Instal Dependensi
-Aplikasi ini menggunakan **Flask** sebagai *framework*. Instal *library* yang dibutuhkan dengan perintah:
+### Step 3: Install Dependencies
+This application utilizes Flask as its core framework. Install the required libraries using the following command:
 ```bash
 pip install -r requirements.txt
 ```
+Note: If you are utilizing `uv`, you may bypass manual virtual environment activation and run the application directly via `uv run app.py`.
 
-*(Jika Anda menggunakan `uv`, Anda bisa menginstal dan menjalankan langsung dengan `uv run app.py` tanpa perlu aktivasi venv secara manual).*
-
-### Langkah 4: Jalankan Aplikasi
-Sekarang Anda siap untuk menjalankan web server! Ketik perintah berikut:
+### Step 4: Initialize the Application
+Execute the following command to start the web server:
 ```bash
 python app.py
 ```
 
-### Langkah 5: Buka di Browser
-Jika berhasil, terminal akan menampilkan pesan bahwa server sedang berjalan (biasanya di port 5000). 
-Buka web browser favorit Anda (Chrome, Firefox, Safari) dan ketikkan alamat berikut:
-👉 **http://127.0.0.1:5000** atau **http://localhost:5000**
+### Step 5: Access via Web Browser
+Upon successful initialization, the terminal will indicate that the server is running (typically on port 5000). 
+Open your preferred web browser and navigate to the following address:
+**http://127.0.0.1:5000** or **http://localhost:5000**
 
-Selamat! Anda sudah bisa menggunakan aplikasi MindCalm PSS-10.
+You may now begin utilizing the MindCalm PSS-10 application.
 
 ---
 
-## 📂 Struktur Folder Proyek
+## Project Directory Structure
 
-Penjelasan singkat tentang isi dari proyek ini:
-- `app.py`: File utama aplikasi Backend (Flask). Berisi logika perhitungan PSS-10, rute (*routing*), dan metode *Certainty Factor*.
-- `requirements.txt`: Daftar pustaka Python (*library*) yang dibutuhkan.
-- `templates/`: Folder yang berisi file antarmuka (HTML).
-  - `index.html`: Halaman utama (Landing Page).
-  - `register.html`: Halaman pendaftaran sebelum mulai tes.
-  - `test.html`: Halaman kuesioner yang interaktif.
-  - `result.html`: Halaman yang menampilkan hasil tes dan tingkat stres.
-  - `print.html`: Format halaman cetak khusus untuk PDF.
-  - `education.html`: Halaman informasi dan edukasi tentang manajemen stres.
+A brief overview of the project's architecture:
+- `app.py`: The primary backend application file (Flask). It contains the PSS-10 calculation logic, routing configuration, and the Certainty Factor methodology implementation.
+- `requirements.txt`: The manifest of required Python dependencies.
+- `templates/`: The directory housing all HTML interface files.
+  - `index.html`: The primary landing page.
+  - `register.html`: The registration form presented prior to initiating the assessment.
+  - `test.html`: The interactive PSS-10 questionnaire interface.
+  - `result.html`: The page displaying the assessment results and corresponding stress level analysis.
+  - `print.html`: The specialized layout designed for generating printable PDF reports.
+  - `education.html`: The informational page containing educational resources regarding stress management.
 
 
