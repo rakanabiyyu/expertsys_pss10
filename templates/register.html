@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran - MindCalm PSS-10</title>
+    <title>Registration - MindCalm PSS-10</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,49 +29,49 @@
 
     <header class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-6 py-4">
-            <div class="text-xl font-bold text-primary"><a href="index.html">MindCalm PSS-10</a></div>
+            <div class="text-xl font-bold text-primary"><a href="{{ url_for('index') }}">MindCalm PSS-10</a></div>
         </div>
     </header>
 
     <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div class="text-center">
-                <h2 class="text-3xl font-bold text-slate-900">Pendaftaran Awal</h2>
+                <h2 class="text-3xl font-bold text-slate-900">Initial Registration</h2>
                 <p class="mt-2 text-sm text-gray-600">
-                    Silakan isi identitas Anda untuk memulai penilaian tingkat stres PSS-10.
+                    Please fill in your details to start the PSS-10 stress assessment.
                 </p>
             </div>
             
             <div class="bg-white py-8 px-6 shadow-xl rounded-2xl border border-gray-100 sm:px-10">
-                <form id="register-form" class="space-y-6">
+                <form id="register-form" class="space-y-6" action="{{ url_for('register') }}" method="POST">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
                         <div class="mt-1">
-                            <input id="name" name="name" type="text" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-gray-50" placeholder="Contoh: Budi Santoso">
+                            <input id="name" name="name" type="text" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-gray-50" placeholder="Example: John Doe">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label for="age" class="block text-sm font-medium text-gray-700">Umur</label>
+                            <label for="age" class="block text-sm font-medium text-gray-700">Age</label>
                             <div class="mt-1">
-                                <input id="age" name="age" type="number" min="1" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-gray-50" placeholder="thn">
+                                <input id="age" name="age" type="number" min="1" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-gray-50" placeholder="yrs">
                             </div>
                         </div>
                         <div>
-                            <label for="gender" class="block text-sm font-medium text-gray-700">Jenis Kelamin</label>
+                            <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
                             <div class="mt-1">
                                 <select id="gender" name="gender" required class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-gray-50 text-gray-700">
-                                    <option value="" disabled selected>Pilih...</option>
-                                    <option value="L">Laki-laki</option>
-                                    <option value="P">Perempuan</option>
+                                    <option value="" disabled selected>Select...</option>
+                                    <option value="L">Male</option>
+                                    <option value="P">Female</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <label for="date" class="block text-sm font-medium text-gray-700">Tanggal Mengerjakan Test</label>
+                        <label for="date" class="block text-sm font-medium text-gray-700">Test Date</label>
                         <div class="mt-1">
                             <input id="date" name="date" type="date" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm bg-gray-50 text-gray-700">
                         </div>
@@ -85,14 +85,14 @@
                         </div>
                         <div class="ml-3 flex-1">
                             <p class="text-xs text-green-700 leading-relaxed font-medium">
-                                Data ini akan digunakan secara anonim untuk memberikan hasil analisis yang lebih akurat sesuai demografi Anda.
+                                This data will be used anonymously to provide more accurate analysis results based on your demographics.
                             </p>
                         </div>
                     </div>
 
                     <div>
                         <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-                            Mulai Tes
+                            Start Test
                         </button>
                     </div>
                 </form>
@@ -104,7 +104,7 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
             <div>
                 <span class="font-bold text-gray-700">MindCalm PSS-10</span><br>
-                © 2026 Universitas Anda
+                © 2026 Universitas Gunadarma
             </div>
             <div class="mt-4 md:mt-0">
                 v 1.0.0
@@ -115,21 +115,6 @@
     <script>
         // Set default date to today
         document.getElementById('date').valueAsDate = new Date();
-
-        document.getElementById('register-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const userData = {
-                name: document.getElementById('name').value,
-                age: document.getElementById('age').value,
-                gender: document.getElementById('gender').value,
-                date: document.getElementById('date').value
-            };
-            
-            localStorage.setItem('pss10_user', JSON.stringify(userData));
-            
-            window.location.href = "test.html";
-        });
     </script>
 </body>
 </html>
